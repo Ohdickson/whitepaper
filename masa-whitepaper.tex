@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[super]{natbib}
 \usepackage{enumitem}
+\usepackage{float}
 
 
 % Language setting
@@ -42,7 +43,7 @@
 As the world transitions from traditional web2 architectures to the decentralized web3 landscape, there is an increasing demand for scalable, interoperable, and standardized on-chain identity infrastructure. Identity infrastructure is essential for establishing and maintaining digital identities, facilitating secure interactions, and enabling rich, multi-dimensional data representation for billions of users. Existing solutions, such as Verifiable Credentials (VCs) and Decentralized Identifiers (DIDs), have limitations in usability, interoperability, and programmable privacy, leading to a fragmented on-chain identity ecosystem. To address these challenges and to harness the potential of web3, we present the Masa Protocol.
 \\
 \newline
-The Masa Protocol is designed to provide an open, easy-to-implement framework for identity in web3, with an open data standard and programmable privacy at its core. Masa lays the foundation for Vitalik’s vision for Soulbound Tokens (SBT) as identity primitive for a Decentralized Society (DeSoc)\cite{vitalik2022}. Through a range of identity primitives, Masa enables the representation of an individual's complex, ever-changing, set of identifiers, which includes credentials, affiliations, behaviors, reputation, and social roles. This holistic approach to digital identity empowers users to control their data and ensures continuity as identifiers evolve over time.
+The Masa Protocol is designed to provide an open, easy-to-implement framework for identity in web3, with an open data standard and programmable privacy at its core. Masa lays the foundation for Vitalik’s vision for Soulbound Tokens (SBT) as identity primitive for a Decentralized Society (DeSoc)\cite{vitalik2022}. Through a range of identity primitives, Masa enables the representation of an individual's complex, ever-changing, set of identifiers, which includes \emph{credentials, affiliations, behaviors, reputation, and social roles}. This holistic approach to digital identity empowers users to control their data and ensures continuity as identifiers evolve over time.
 \\
 \newline
 Masa's decentralized oracle network offers cross-chain data interoperability, private data management, governance, and account abstraction, thereby streamlining the integration of web3 identity into diverse applications. Deployed on five leading EVM-compatible blockchains, the Masa Protocol has generated over 1,200,000 identifiers for more than 500,000 individuals (at the time of publishing) at the time of publishing, showcasing its potential to revolutionize web3 identity as the de-facto identity infrastructure for developers building web3 communities.
@@ -67,17 +68,6 @@ Soulnames are tradable and based on ERC-721; they compose with the Masa SoulLink
 Being simple to mint and register, soulname minting can be embedded natively within an app such as a web3 game or NFT platform, providing a viable source of revenue. Soulnames can be traded on platforms like OpenSea to provide secondary market value to holders. ENS-based domain services require more steps for a user to register and transfer ownership, making them unsuitable for many fully integrated use cases. Soulnames can be used in apps and wallets as identifiers, usernames, and handles and resolved to addresses in wallets for making payments to another individual without sharing a 42-character hexadecimal address with the sender.  
 \subsection{Soulbound Tokens (SBTs)}
 \subsubsection{Introduction}
-Soulbound Tokens (SBTs), as suggested by Ethereum creator Vitalik Buterin, are an innovative concept that can help establish the foundation for a Decentralized Society (DeSoc). SBTs are non-transferable NFTs, meaning they cannot be bought, sold, or traded, and are permanently associated with a particular user's blockchain account, usually an Ethereum or EVM-based wallet.
-
-\begin{enumerate}[label=\arabic*.]
-    \item Rewards and loyalty: Masa soulbound badges represent a user’s status and contribution in a web3 community. Community builders and developers can leverage these soulbound badges to identify power users, offer SBT-gated perks, and gamify community engagement.
-    \item Compliance and anti-bot: The Masa Wallet Screening SBT ensures that users meet compliance and regulatory requirements, such as anti-money laundering (AML) and counter-terrorist financing (CTF) rules. The Masa Green SBT proves that a wallet is not a bot and serves as a soulbound verification method.
-    \item Credit and underwriting: The Masa Credit Score SBT allows users to build credit scores based on their financial behavior and activities on the blockchain, enabling better access to credit and other financial services.
-    \item Reputation and DAO participation: Using SBTs, users can establish and maintain a reputation within their ecosystem of choice using various SBTs to represent their credentials, contributions, and affiliations, and participate in Decentralized Autonomous Organizations (DAOs) or a native on-chain community.
-  \end{enumerate}
-
-Masa has extended the ERC-721 standard to cater to the unique requirements of SBTs, providing a comprehensive interface for the development and implementation of these tokens. This new standard, EIP-SBT, aims to standardize the SBT concept across the Ethereum ecosystem, making it easier for developers to create and deploy SBTs for various applications
-\subsection{SBT vs NFT}
 Non-Fungible Tokens (NFTs) have gained widespread usage as an incentive for web3 community building. However, they exhibit limitations in long-term, sustainable community building due to short-term hype cycles and diminishing loyalty. Soulbound Tokens (SBTs), in contrast, promote long-term community building as they are non-transferable and reward users for desired actions and complex ecosystem interactions. 
 \\
 \newline
@@ -88,7 +78,20 @@ Masa’s SBTs offer gas savings compared to NFTs, and as such, can be issued cos
 \\
 \newline
 NFTs still present regulatory challenges, as they are taxed in various jurisdictions, creating tax issues for users and the issuers, whereas SBTs do not share these regulatory concerns and can be utilized to build and grow web3 communities in a low-risk manner.
+\\
+\newline
+Soulbound Tokens (SBTs), as suggested by Ethereum creator Vitalik Buterin, are an innovative concept that can help establish the foundation for a Decentralized Society (DeSoc). SBTs are non-transferable NFTs, meaning they cannot be bought, sold, or traded, and are permanently associated with a particular user's blockchain account, usually an Ethereum or EVM-based wallet.
+\\
+\newline
+\subsubsection{Example use cases}
+\begin{enumerate}[label=\arabic*.]
+    \item Rewards and loyalty: Masa soulbound badges represent a user’s status and contribution in a web3 community. Community builders and developers can leverage these soulbound badges to identify power users, offer SBT-gated perks, and gamify community engagement.
+    \item Compliance and anti-bot: The Masa Wallet Screening SBT ensures that users meet compliance and regulatory requirements, such as anti-money laundering (AML) and counter-terrorist financing (CTF) rules. The Masa Green SBT proves that a wallet is not a bot and serves as a soulbound verification method.
+    \item Credit and underwriting: The Masa Credit Score SBT allows users to build credit scores based on their financial behavior and activities on the blockchain, enabling better access to credit and other financial services.
+    \item Reputation and DAO participation: Using SBTs, users can establish and maintain a reputation within their ecosystem of choice using various SBTs to represent their credentials, contributions, and affiliations, and participate in Decentralized Autonomous Organizations (DAOs) or a native on-chain community.
+  \end{enumerate}
 
+Masa has extended the ERC-721 standard to cater to the unique requirements of SBTs, providing a comprehensive interface for the development and implementation of these tokens. This new standard, EIP-SBT, aims to standardize the SBT concept across the Ethereum ecosystem, making it easier for developers to create and deploy SBTs for various applications
 \subsubsection{EIP-SBT}
 EIP-SBT introduces a standard interface for Soulbound Tokens (SBTs), which are non-transferable identifiers that, when composed together, form a complete identity for an individual. Identifiers represent physical and interpersonal characteristics not wholly shared with any other person, such as credentials, affiliations, behaviors, reputation, and social roles. 
 \\
@@ -96,7 +99,7 @@ EIP-SBT introduces a standard interface for Soulbound Tokens (SBTs), which are n
 The following standard allows for the implementation of a standard API for SBTs within smart contracts. This standard provides basic functionality to mint, track and burn SBTs, resulting in a gas saving of 38\% on the deployment and 3\% on the minting over EIP-721.
 \\
 \newline
-This EIP outlines an interface inspired by the EIP-721 standard for creating Soulbound tokens. However, it does not inherit from the EIP-721 standard to establish a new token type.
+This EIP outlines an interface inspired by the EIP-721 standard for creating Soulbound tokens. However, it does not inherit from the EIP-721 standard to establish a new token type as shown in Appendix \ref{app.eipsbt}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{gas-usage.png}
@@ -131,7 +134,7 @@ This approach ensures that the minting process remains secure and that only auth
 
 \subsection{Zero-Knowledge Soulound Tokens (zkSBT)}
 
-The Masa zkSBT (Zero-Knowledge Soulbound Token)\cite{zksbt} is a brand-new token design that provides privacy-preserving and secure storage of private data on any EVM blockchain. The zkSBT inherits from the Masa SBT Self-Sovereign token standard, which is designed to store private user data in an encrypted and secure manner. Masa’s zkSBT will be released in Q2 2023 for community development, and a detailed academic paper will be published detailing the zkSBT implementation.
+The Masa zkSBT (Zero-Knowledge Soulbound Token)\cite{zksbt} is a brand-new token design that provides privacy-preserving and secure storage of private data on any EVM blockchain. The zkSBT inherits from the Masa SBT Self-Sovereign token standard, and is designed to store private user data in an encrypted and secure manner. Masa’s zkSBT will be released in Q2 2023 for community development, and a detailed academic paper will be published detailing the zkSBT implementation.
 \\
 \newline
 The zkSBT contract is designed to provide privacy and security for users' private data while maintaining the benefits of decentralized data storage. By utilizing zero-knowledge proofs, the contract enables the sharing of encrypted private data without revealing the actual data to any third party\cite{linkingsouls}. Masa ustilizes libraries from ZoKrates\cite{zokrates} and Iden3’s Circom\cite{circom}.
@@ -144,6 +147,12 @@ The zkSBT contract includes functions for retrieving the hash and encrypted data
 \\
 \newline
 By implementing the zkSBT token, users can securely store and share their private data on any EVM blockchain, benefiting from the privacy and security of zero-knowledge proofs.
+\subsubsection{Sequence diagram}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{sequence-digram.png}
+    \caption{Masa zkpSBT sequence diagram}
+  \end{figure}
 \subsubsection{Key components}
 \begin{enumerate}
     \item Structures:
@@ -170,13 +179,9 @@ By implementing the zkSBT token, users can securely store and share their privat
       \item \texttt{MintedToAddress}: An event emitted when a new SBT is minted, containing tokenId, recipient address, authority address, signature date, payment method, and mint price.
     \end{enumerate}
   \end{enumerate}
-  \subsubsection{Sequence diagram}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{sequence-digram.png}
-        \caption{Masa zkpSBT sequence diagram}
-      \end{figure}
+
   \subsubsection{zkpSBT}
+
   \begin{verbatim}
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.7;
@@ -214,8 +219,9 @@ By implementing the zkSBT token, users can securely store and share their privat
 \item Decentralized Reputation Systems: In a web3 ecosystem, users can store their encrypted reputation data, such as reviews or ratings from decentralized applications (dApps), within zkSBTs. When interacting with dApps or services that require reputation-based access or decision-making, users can share their zkSBT without revealing specific details about their interactions. The dApp or service can verify the authenticity and overall reputation score using zero-knowledge proofs, ensuring user privacy.
 \item Secure Voting: In a decentralized voting system, voters can store their encrypted votes within zkSBTs. Election authorities can use zero-knowledge proofs to verify the validity of votes without revealing the actual vote content, thereby ensuring voter privacy and the integrity of the voting process.
 \item Private Asset Ownership: Users can store encrypted records of their asset ownership (e.g., real estate, vehicles) within zkSBTs. When required to prove ownership, users can share their zkSBT with relevant authorities, allowing them to verify ownership without revealing the specific details of the assets.
-\item These use cases demonstrate the versatility and potential of the zkSBT contract in enabling privacy-preserving and secure storage of private data on the EVM blockchain in the web3 ecosystem.
 \end{enumerate}
+These use cases demonstrate the versatility and potential of the zkSBT contract in enabling privacy-preserving and secure storage of private data on the EVM blockchain in the web3 ecosystem.
+
 
 \section{Masa Protocol}
 Developers using the Masa Protocol, and its infrastructure which includes SDKs and developers tools such as the Masa CLI\cite{cli}, pay a fee that goes directly to the protocol treasury for distribution back to node operators and for maintaining the protocol. Fees are collected on-chain in MASA tokens and native blockchain tokens for the following actions:
@@ -242,7 +248,7 @@ Additionally, the oracle nodes integrate key components from EIP-4337, such as a
 \item Bundler: The Masa Protocol incorporates a bundler that is compatible with the ERC-4337 standard. The Masa bundler helps to manage gasless transactions for SSSBTs, ASBTs, and on-chain permissions of data through batched transactions, and other advanced features, making the Masa Protocol more accessible and versatile for its users.
 \item Paymaster: Masa's Oracle network has paymasters to facilitate transaction sponsorship, allowing users to execute gasless transactions and enabling third-party mechanisms to pay for transaction fees. This offers users the flexibility to pay transaction fees using ERC-20 tokens or to have fees sponsored by the Masa protocol, enhancing the overall user experience.
 \end{enumerate}
-With the Masa Protocol's decentralized oracle network, the protocol can effectively govern identity data while providing a more efficient and user-friendly experience through a fully decentralized infrastructure.
+With the Masa Protocol's decentralized oracle network, the protocol can effectively govern identity data while providing a more efficient and user-friendly experience through fully decentralized infrastructure.
 
 \subsection{Account abstraction}
 Account abstraction has been pioneered by the Ethereum Foundation and EIP-4337\cite{eip4337}. EIP-4337 decouples the traditional relationship between a user's externally owned account (EOA) and the associated private key. In conventional blockchain systems, users interact with the network using EOAs, which are controlled by an external private key. While this model has been widely adopted, it can present a barrier to entry for some users due to its reliance on a deep understanding of blockchain mechanics and public key, and private key cryptography.
@@ -294,7 +300,7 @@ By implementing these incentive mechanisms, the Masa Protocol aims to create a s
 \subsection{Incentivizing Network Participants}
 \begin{enumerate}
 \item The Masa token serves as the primary means of incentivizing various network participants, such as node operators, bundlers, and paymasters, to provide high-quality services within the Masa Protocol.
-\item y distributing Masa tokens as rewards for Oracle network node operators, the protocol ensures that these participants remain invested in the overall success and growth of the ecosystem.
+\item By distributing Masa tokens as rewards for Oracle network node operators, the protocol ensures that these participants remain invested in the overall success and growth of the ecosystem.
 \end{enumerate}
 \subsection{Protocol Treasury}
 \begin{enumerate}
@@ -310,11 +316,255 @@ In this paper, we have presented the first version of the Masa Protocol; a groun
 SBTs are highly composable on-chain identifiers that can be applied to functional use cases in building web3 communities, such as user acquisition, gamified community engagement, and user verification. zkSBTs serve as the foundation for secure and privacy-preserving digital identities, employing zero-knowledge proofs to maintain the confidentiality of off-chain data while still facilitating verifiable on-chain interactions. This is made possible through the Masa Protocol's decentralized oracle network, which retrieves, validates, and maintains identity data, ensuring the accuracy and reliability of information while enabling a plurality of identity-related use cases.
 \\
 \newline
-Moreover, the Masa Protocol incorporates key components of EIP-4337, such as account abstraction, bundlers, and paymasters. This allows for a superior and user-friendly web3 identity experience, with features like social key recovery, private key rotation, sponsored transactions, and enhanced security for SBT holders. The bundler and paymaster systems also contribute to making the Masa Protocol accessible to the next billion users through gasless transactions and third-party transaction fee sponsorship.
+Moreover, the Masa Protocol incorporates key components of EIP-4337, such as account abstraction, bundlers, and paymasters. This allows for a superior and user-friendly web3 identity experience, with features like social key recovery, private key rotation, sponsored transactions, and enhanced security for SBT holders. The bundler and paymaster systems also contribute to making the Masa Protocol accessible to the next billion users through smart accounts and third-party transaction fee sponsorship.
 \\
 \newline
 As web3 communities continue to evolve, the Masa Protocol is set to revolutionize identity infrastructure in web3. By delivering a robust, user-friendly, and privacy-centric infrastructure, the Masa Protocol cements its role as the leader in the identity infrastructure for user-oriented blockchains, web3 applications, and their communities.
+\appendix
+\section{Appendix A: EIP-SBT}
+\label{app.eipsbt}
+\begin{verbatim}
+  // SPDX-License-Identifier: Apache-2.0
+pragma solidity ^0.8.7;
 
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts/utils/Context.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
+
+import "./ISBT.sol";
+import "./extensions/ISBTMetadata.sol";
+
+/// @title SBT
+/// @author Masa Finance
+/// @notice Soulbound token is an NFT token that is not transferable.
+contract SBT is Context, ERC165, ISBT, ISBTMetadata {
+    using Strings for uint256;
+
+    // Token name
+    string private _name;
+
+    // Token symbol
+    string private _symbol;
+
+    // Mapping from token ID to owner address
+    mapping(uint256 => address) private _owners;
+
+    // Mapping owner address to token count
+    mapping(address => uint256) private _balances;
+
+    /**
+     * @dev Initializes the contract by setting a `name` and a `symbol` to the token collection.
+     */
+    constructor(string memory name_, string memory symbol_) {
+        _name = name_;
+        _symbol = symbol_;
+    }
+
+    /**
+     * @dev See {IERC165-supportsInterface}.
+     */
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(ERC165, IERC165)
+        returns (bool)
+    {
+        return
+            interfaceId == type(ISBT).interfaceId ||
+            interfaceId == type(ISBTMetadata).interfaceId ||
+            super.supportsInterface(interfaceId);
+    }
+
+    /**
+     * @dev See {ISBT-balanceOf}.
+     */
+    function balanceOf(address owner)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
+        require(owner != address(0), "SBT: address zero is not a valid owner");
+        return _balances[owner];
+    }
+
+    /**
+     * @dev See {ISBT-ownerOf}.
+     */
+    function ownerOf(uint256 tokenId)
+        public
+        view
+        virtual
+        override
+        returns (address)
+    {
+        address owner = _owners[tokenId];
+        require(owner != address(0), "SBT: invalid token ID");
+        return owner;
+    }
+
+    /**
+     * @dev See {ISBTMetadata-name}.
+     */
+    function name() public view virtual override returns (string memory) {
+        return _name;
+    }
+
+    /**
+     * @dev See {ISBTMetadata-symbol}.
+     */
+    function symbol() public view virtual override returns (string memory) {
+        return _symbol;
+    }
+
+    /**
+     * @dev See {ISBTMetadata-tokenURI}.
+     */
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        virtual
+        override
+        returns (string memory)
+    {
+        _requireMinted(tokenId);
+
+        string memory baseURI = _baseURI();
+        return
+            bytes(baseURI).length > 0
+                ? string(abi.encodePacked(baseURI, tokenId.toString()))
+                : "";
+    }
+
+    /**
+     * @dev Base URI for computing {tokenURI}. If set, the resulting URI for each
+     * token will be the concatenation of the `baseURI` and the `tokenId`. Empty
+     * by default, can be overridden in child contracts.
+     */
+    function _baseURI() internal view virtual returns (string memory) {
+        return "";
+    }
+
+    /**
+     * @dev Returns whether `spender` is allowed to manage `tokenId`.
+     *
+     * Requirements:
+     *
+     * - `tokenId` must exist.
+     */
+    function _isOwner(address spender, uint256 tokenId)
+        internal
+        view
+        virtual
+        returns (bool)
+    {
+        address owner = SBT.ownerOf(tokenId);
+        return (spender == owner);
+    }
+
+    /**
+     * @dev Returns whether `tokenId` exists.
+     *
+     * Tokens can be managed by their owner.
+     *
+     * Tokens start existing when they are minted (`_mint`),
+     * and stop existing when they are burned (`_burn`).
+     */
+    function _exists(uint256 tokenId) internal view virtual returns (bool) {
+        return _owners[tokenId] != address(0);
+    }
+
+    /**
+     * @dev Mints `tokenId` and transfers it to `to`.
+     *
+     * WARNING: Usage of this method is discouraged, use {_safeMint} whenever possible
+     *
+     * Requirements:
+     *
+     * - `tokenId` must not exist.
+     * - `to` cannot be the zero address.
+     *
+     * Emits a {Mint} event.
+     */
+    function _mint(address to, uint256 tokenId) internal virtual {
+        require(to != address(0), "SBT: mint to the zero address");
+        require(!_exists(tokenId), "SBT: token already minted");
+
+        _beforeTokenTransfer(address(0), to, tokenId);
+
+        _balances[to] += 1;
+        _owners[tokenId] = to;
+
+        emit Mint(to, tokenId);
+
+        _afterTokenTransfer(address(0), to, tokenId);
+    }
+
+    /**
+     * @dev Destroys `tokenId`.
+     *
+     * Requirements:
+     * - `tokenId` must exist.
+     *
+     * Emits a {Burn} event.
+     */
+    function _burn(uint256 tokenId) internal virtual {
+        address owner = SBT.ownerOf(tokenId);
+
+        _beforeTokenTransfer(owner, address(0), tokenId);
+
+        _balances[owner] -= 1;
+        delete _owners[tokenId];
+
+        emit Burn(owner, tokenId);
+
+        _afterTokenTransfer(owner, address(0), tokenId);
+    }
+
+    /**
+     * @dev Reverts if the `tokenId` has not been minted yet.
+     */
+    function _requireMinted(uint256 tokenId) internal view virtual {
+        require(_exists(tokenId), "SBT: invalid token ID");
+    }
+
+    /**
+     * @dev Hook that is called before any token minting/burning
+     *
+     * Calling conditions:
+     *
+     * - When `from` and `to` are both non-zero, ``from``'s `tokenId` will be
+     * transferred to `to`.
+     * - When `from` is zero, `tokenId` will be minted for `to`.
+     * - When `to` is zero, ``from``'s `tokenId` will be burned.
+     * - `from` and `to` are never both zero.
+     *
+     * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
+     */
+    function _beforeTokenTransfer(
+        address,
+        address,
+        uint256
+    ) internal virtual {}
+
+    /**
+     * @dev Hook that is called after any minting/burning of tokens
+     *
+     * Calling conditions:
+     * - when `from` and `to` are both non-zero.
+     * - `from` and `to` are never both zero.
+     *
+     * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
+     */
+    function _afterTokenTransfer(
+        address,
+        address,
+        uint256
+    ) internal virtual {}
+}
+\end{verbatim}
 
 \bibliographystyle{unsrtnat}
 \bibliography{sample}
